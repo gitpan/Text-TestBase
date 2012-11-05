@@ -1,0 +1,37 @@
+---
+abstract: 'Parser for Test::Base format'
+author:
+  - 'Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>'
+build_requires:
+  Test::More: 0.98
+  Test::Requires: 0
+configure_requires:
+  Module::Build: 0.38
+dynamic_config: 0
+generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Text-TestBase
+no_index:
+  directory:
+    - inc
+provides:
+  Data::Section::TestBase:
+    file: lib/Data/Section/TestBase.pm
+    version: 0
+  Text::TestBase:
+    file: lib/Text/TestBase.pm
+    version: 0.01
+  Text::TestBase::Block:
+    file: lib/Text/TestBase/Block.pm
+    version: 0
+requires:
+  Class::Accessor::Lite: 0
+  Exporter: 0
+  parent: 0
+  perl: 5.008001
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01
