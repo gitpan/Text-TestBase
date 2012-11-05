@@ -21,17 +21,24 @@ provides:
   Data::Section::TestBase:
     file: lib/Data/Section/TestBase.pm
     version: 0
+  Test::Base::Less:
+    file: lib/Test/Base/Less.pm
+    version: 0
+  Test::Base::Less::Filter:
+    file: lib/Test/Base/Less.pm
+    version: 0
   Text::TestBase:
     file: lib/Text/TestBase.pm
-    version: 0.01
+    version: 0.02
   Text::TestBase::Block:
     file: lib/Text/TestBase/Block.pm
     version: 0
 requires:
   Class::Accessor::Lite: 0
   Exporter: 0
+  Test::More: 0.98
   parent: 0
   perl: 5.008001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01
+version: 0.02
