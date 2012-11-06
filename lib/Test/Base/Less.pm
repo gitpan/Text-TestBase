@@ -8,7 +8,7 @@ use Test::More;
 use Data::Section::TestBase ();
 use Carp ();
 
-our @EXPORT = (@Test::More::EXPORT, qw/filters blocks register_filter/);
+our @EXPORT = (@Test::More::EXPORT, qw/filters blocks register_filter run/);
 
 our %FILTER_MAP;
 our %FILTERS;
@@ -28,7 +28,12 @@ sub filters($) {
 }
 
 sub blocks() {
-    my $sec = Data::Section::TestBase->new(package => scalar(caller));
+    _get_blocks(scalar(caller(0)));
+}
+
+sub _get_blocks {
+    my $package = shift;
+    my $sec = Data::Section::TestBase->new(package => $package);
     my @blocks = $sec->blocks();
     for my $block (@blocks) {
         for my $section_name ($block->get_section_names) {
@@ -40,7 +45,7 @@ sub blocks() {
                     } else { # filters { input => [qw/eval/] };
                         my $filter = $FILTERS{$filter_stuff};
                         unless ($filter) {
-                            Carp::croak "Unknown filter name: $filter";
+                            Carp::croak "Unknown filter name: $filter_stuff";
                         }
                         @data = $filter->(@data);
                     }
@@ -50,6 +55,16 @@ sub blocks() {
         }
     }
     return @blocks;
+}
+
+sub run(&) {
+    my $code = shift;
+
+    for my $block (_get_blocks(scalar(caller(0)))) {
+        __PACKAGE__->builder->subtest($block->name || 'L: ' . $block->get_lineno, sub {
+            $code->($block);
+        });
+    }
 }
 
 package Test::Base::Less::Filter;
@@ -126,7 +141,7 @@ Register a filter for $name using $code.
 =head1 DEFAULT FILTERS
 
 This module provides only few filters. If you want to add more filters, pull-reqs welcome.
-(I only merge a patch using no dependend modules)
+(I only merge a patch using no depended modules)
 
 =over 4
 
