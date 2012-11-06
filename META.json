@@ -55,7 +55,7 @@
       },
       "Text::TestBase" : {
          "file" : "lib/Text/TestBase.pm",
-         "version" : "0.06"
+         "version" : "0.07"
       },
       "Text::TestBase::Block" : {
          "file" : "lib/Text/TestBase/Block.pm",
@@ -68,5 +68,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.06"
+   "version" : "0.07"
 }
