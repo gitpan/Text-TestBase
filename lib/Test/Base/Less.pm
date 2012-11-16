@@ -3,12 +3,14 @@ use strict;
 use warnings;
 use utf8;
 
+our $VERSION = '0.08';
+
 use parent qw/Test::Builder::Module Exporter/;
 use Test::More;
 use Data::Section::TestBase ();
 use Carp ();
 
-our @EXPORT = (@Test::More::EXPORT, qw/filters blocks register_filter run run_is/);
+our @EXPORT = (@Test::More::EXPORT, qw/filters blocks register_filter run run_is run_is_deeply/);
 
 our %FILTER_MAP;
 our %FILTERS;
@@ -101,6 +103,19 @@ sub run_is($$) {
     }
 }
 
+sub run_is_deeply($$) {
+    my ($a, $b) = @_;
+
+    for my $block (_get_blocks(scalar(caller(0)))) {
+        local $Test::Builder::Level = $Test::Builder::Level + 1;
+        Test::More::is_deeply(
+            $block->get_section($a),
+            $block->get_section($b),
+            $block->name || 'L: ' . $block->get_lineno
+        );
+    }
+}
+
 package Test::Base::Less::Filter;
 
 Test::Base::Less::register_filter(eval => \&_eval);
@@ -121,6 +136,15 @@ sub _chomp {
 Test::Base::Less::register_filter(uc => \&_uc);
 sub _uc {
     map { CORE::uc($_) } @_;
+}
+
+Test::Base::Less::register_filter(trim => \&_trim);
+sub _trim {
+    map {
+        s/\A([ \t]*\n)+//;
+        s/(?<=\n)\s*\z//g;
+        $_;
+    } @_;
 }
 
 1;
@@ -196,6 +220,11 @@ chomp() the arguments.
 
 uc() the arguments.
 
+=item trim
+
+Remove extra blank lines from the beginning and end of the data. This
+allows you to visually separate your test data with blank lines.
+
 =back
 
 =head1 REGISTER YOUR OWN FILTER
@@ -214,3 +243,6 @@ You can use a coderef as filter.
         input => [\&md5_hex],
     };
 
+=head1 SEE ALSO
+
+Most of code is taken from L<Test::Base>. Thanks Ingy.
