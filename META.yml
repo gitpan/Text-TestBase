@@ -23,13 +23,13 @@ provides:
     version: 0
   Test::Base::Less:
     file: lib/Test/Base/Less.pm
-    version: 0.08
+    version: 0.09
   Test::Base::Less::Filter:
     file: lib/Test/Base/Less.pm
     version: 0
   Text::TestBase:
     file: lib/Text/TestBase.pm
-    version: 0.08
+    version: 0.09
   Text::TestBase::Block:
     file: lib/Text/TestBase/Block.pm
     version: 0
@@ -41,4 +41,4 @@ requires:
   perl: 5.008001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.08
+version: 0.09
