@@ -1,14 +1,17 @@
 ---
 abstract: 'Parser for Test::Base format'
 author:
-  - 'Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>'
+  - 'Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>'
 build_requires:
+  Digest::MD5: 0
   Test::More: 0.98
   Test::Requires: 0
 configure_requires:
+  CPAN::Meta: 0
+  CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Minilla/v0.3.2, CPAN::Meta::Converter version 2.130880'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -16,29 +19,37 @@ meta-spec:
 name: Text-TestBase
 no_index:
   directory:
+    - t
+    - xt
     - inc
+    - share
+    - eg
+    - examples
+    - author
 provides:
   Data::Section::TestBase:
     file: lib/Data/Section/TestBase.pm
-    version: 0
   Test::Base::Less:
     file: lib/Test/Base/Less.pm
-    version: 0.09
+    version: 0.10
   Test::Base::Less::Filter:
     file: lib/Test/Base/Less.pm
-    version: 0
   Text::TestBase:
     file: lib/Text/TestBase.pm
-    version: 0.09
+    version: 0.10
   Text::TestBase::Block:
     file: lib/Text/TestBase/Block.pm
-    version: 0
 requires:
-  Class::Accessor::Lite: 0
+  Class::Accessor::Lite: 0.05
   Exporter: 0
+  Test::Builder::Module: 0
   Test::More: 0.98
   parent: 0
   perl: 5.008001
 resources:
-  license: http://dev.perl.org/licenses/
-version: 0.09
+  bugtracker: https://github.com/tokuhirom/Text-TestBase/issues
+  homepage: https://github.com/tokuhirom/Text-TestBase
+  repository: git://github.com/tokuhirom/Text-TestBase.git
+version: 0.10
+x_contributors:
+  - 'tokuhirom <tokuhirom@gmail.com>'

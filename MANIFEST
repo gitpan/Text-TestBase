@@ -1,16 +1,13 @@
-.proverc
-.travis.yml
 Build.PL
 Changes
+LICENSE
+META.json
+README.md
+cpanfile
 lib/Data/Section/TestBase.pm
 lib/Test/Base/Less.pm
 lib/Text/TestBase.pm
 lib/Text/TestBase/Block.pm
-LICENSE
-MANIFEST			This list of files
-META.json
-META.yml
-README
 t/00_compile.t
 t/Data-Section-TestBase/04_data.t
 t/Test-Base-Less/01_run_is.t
@@ -25,9 +22,6 @@ t/Test-Base-Less/multiline.t
 t/Test-Base-Less/run_is_deeply.t
 t/Text-TestBase/02_block_offset.t
 t/Text-TestBase/03_block.t
-xt/01_podspell.t
 xt/02_perlcritic.t
-xt/03_pod.t
-xt/04_minimum_version.t
-xt/05_cpan_meta.t
-xt/06_meta_author.t
+META.yml
+MANIFEST
