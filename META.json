@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.3.2",
+   "generated_by" : "Minilla/v0.4.7",
    "license" : "perl_5",
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -35,7 +35,7 @@
             "Test::CPAN::Meta" : "0",
             "Test::MinimumVersion" : "0.10108",
             "Test::Pod" : "1.41",
-            "Test::Spellunker" : "v0.2.2"
+            "Test::Spellunker" : "v0.2.7"
          }
       },
       "runtime" : {
@@ -62,14 +62,14 @@
       },
       "Test::Base::Less" : {
          "file" : "lib/Test/Base/Less.pm",
-         "version" : "0.10"
+         "version" : "0.11"
       },
       "Test::Base::Less::Filter" : {
          "file" : "lib/Test/Base/Less.pm"
       },
       "Text::TestBase" : {
          "file" : "lib/Text/TestBase.pm",
-         "version" : "0.10"
+         "version" : "0.11"
       },
       "Text::TestBase::Block" : {
          "file" : "lib/Text/TestBase/Block.pm"
@@ -86,7 +86,7 @@
          "web" : "https://github.com/tokuhirom/Text-TestBase"
       }
    },
-   "version" : "0.10",
+   "version" : "0.11",
    "x_contributors" : [
       "tokuhirom <tokuhirom@gmail.com>"
    ]

@@ -1,5 +1,11 @@
 Revision history for Perl extension Text::TestBase
 
+0.11 2013-06-04T22:31:09Z
+
+    - get_section: return undefined value if the key does not exist.
+      AUTOLOAD: die if the block does not exists.
+      (tokuhirom)
+
 0.10 2013-05-07T05:22:43Z
 
     - Fixed deps
