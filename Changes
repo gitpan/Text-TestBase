@@ -1,5 +1,10 @@
 Revision history for Perl extension Text::TestBase
 
+0.12 2013-07-22T04:57:52Z
+
+    - Suppress warnings
+      (Hiroki Honda)
+
 0.11 2013-06-04T22:31:09Z
 
     - get_section: return undefined value if the key does not exist.
